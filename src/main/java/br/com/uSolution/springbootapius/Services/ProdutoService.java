@@ -1,6 +1,5 @@
 package br.com.uSolution.springbootapius.Services;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,11 @@ import br.com.uSolution.springbootapius.models.Produto;
 public class ProdutoService {
 	
 	@Autowired
-	private ProdutoRepository service;
-	
-	
-	public List<Produto> addAll(List<Produto> list){
-		return service.saveAll(list);
+	private ProdutoRepository repository;
+
+	public void saveAll(List<Produto> entities) {
+		repository.saveAll(entities);
 	}
+	
 
 }

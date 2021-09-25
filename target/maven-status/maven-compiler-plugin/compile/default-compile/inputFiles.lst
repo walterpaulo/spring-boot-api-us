@@ -1,0 +1,5 @@
+/home/walter/eclipse-workspace/spring-boot-api-us/src/main/java/br/com/uSolution/springbootapius/SpringBootApiUsApplication.java
+/home/walter/eclipse-workspace/spring-boot-api-us/src/main/java/br/com/uSolution/springbootapius/models/Produto.java
+/home/walter/eclipse-workspace/spring-boot-api-us/src/main/java/br/com/uSolution/springbootapius/Services/ProdutoService.java
+/home/walter/eclipse-workspace/spring-boot-api-us/src/main/java/br/com/uSolution/springbootapius/Config/Initation.java
+/home/walter/eclipse-workspace/spring-boot-api-us/src/main/java/br/com/uSolution/springbootapius/Repositorys/ProdutoRepository.java

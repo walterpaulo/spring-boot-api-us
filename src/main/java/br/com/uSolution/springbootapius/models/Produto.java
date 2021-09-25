@@ -3,41 +3,45 @@ package br.com.uSolution.springbootapius.models;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Table
+@Entity
 public class Produto implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	private Long id;
+	private Integer id;
 	private String nome;
 	private BigDecimal valor;
 	public Produto() {
 		super();
 	}
-	public Produto(Long id, String nome, BigDecimal valor) {
+	
+	public Produto(Integer id, String nome, BigDecimal valor) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.valor = valor;
 	}
+	
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
+
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the nome
 	 */

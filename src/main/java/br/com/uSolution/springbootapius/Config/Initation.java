@@ -11,7 +11,7 @@ import br.com.uSolution.springbootapius.Services.ProdutoService;
 import br.com.uSolution.springbootapius.models.Produto;
 
 @Configuration
-public class Inatition implements CommandLineRunner {
+public class Initation implements CommandLineRunner {
 
 	@Autowired
 	private ProdutoService service;
@@ -22,8 +22,7 @@ public class Inatition implements CommandLineRunner {
 		Produto pro2 = new Produto(null, "Leite", new BigDecimal("5"));
 		Produto pro3 = new Produto(null, "Café", new BigDecimal("20.00"));
 		
-		service.addAll(Arrays.);
-		
+		service.saveAll(Arrays.asList(pro1,pro2,pro3));
 		
 	}
 

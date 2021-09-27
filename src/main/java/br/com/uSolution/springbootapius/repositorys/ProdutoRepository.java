@@ -1,4 +1,4 @@
-package br.com.uSolution.springbootapius.Repositorys;
+package br.com.uSolution.springbootapius.repositorys;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package br.com.uSolution.springbootapius.Services;
+package br.com.uSolution.springbootapius.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.uSolution.springbootapius.Repositorys.ProdutoRepository;
 import br.com.uSolution.springbootapius.models.Produto;
+import br.com.uSolution.springbootapius.repositorys.ProdutoRepository;
+import br.com.uSolution.springbootapius.services.exception.ObjectNotFoundException;
 
 @Service
 public class ProdutoService {
@@ -22,6 +23,12 @@ public class ProdutoService {
 	public List<Produto> getProdutos() {
 		List<Produto> obj = repository.findAll();
 		return obj;
+	}
+	public Produto getId(Integer id) {
+		Optional<Produto> obj = repository.findById(id);
+		return obj.orElseThrow(
+				() -> new ObjectNotFoundException(
+						"Objeto não encontrado!: "+id+", "+Produto.class.getName()));
 	}
 
 }

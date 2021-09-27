@@ -1,4 +1,4 @@
-package br.com.uSolution.springbootapius.Config;
+package br.com.uSolution.springbootapius.config;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import br.com.uSolution.springbootapius.Services.ProdutoService;
+import br.com.uSolution.springbootapius.services.ProdutoService;
 import br.com.uSolution.springbootapius.models.Produto;
 
 @Configuration

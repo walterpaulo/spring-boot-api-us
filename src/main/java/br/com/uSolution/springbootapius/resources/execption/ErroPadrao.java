@@ -1,4 +1,4 @@
-package br.com.uSolution.springbootapius.services.execption;
+package br.com.uSolution.springbootapius.resources.execption;
 
 import java.io.Serializable;
 import java.time.Instant;

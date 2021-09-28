@@ -1,4 +1,4 @@
-package br.com.uSolution.springbootapius.services.execption;
+package br.com.uSolution.springbootapius.resources.execption;
 
 import java.time.Instant;
 
@@ -16,13 +16,22 @@ public class ResourceExeceptionHandler {
 
 	@ExceptionHandler(ObjectNotFoundException.class)
 	public ResponseEntity<ErroPadrao> resourceNotFound(ObjectNotFoundException e, HttpServletRequest resquest) {
-		
+
 		String erro = "objct not found";
-		HttpStatus status = HttpStatus.NOT_FOUND;
+		HttpStatus status = HttpStatus.BAD_REQUEST;
 		ErroPadrao err = new ErroPadrao(Instant.now(), status.value(), erro, e.getMessage(), resquest.getRequestURI());
 
 		return ResponseEntity.status(status).body(err);
+	}
 
+	@ExceptionHandler(NumberFormatException.class)
+	public ResponseEntity<ErroPadrao> numberFormatException(NumberFormatException e, HttpServletRequest resquest) {
+
+		String erro = "Invalid data";
+		HttpStatus status = HttpStatus.BAD_REQUEST;
+		ErroPadrao err = new ErroPadrao(Instant.now(), status.value(), erro, e.getMessage(), resquest.getRequestURI());
+
+		return ResponseEntity.status(status).body(err);
 	}
 
 }

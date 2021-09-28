@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.com.uSolution.springbootapius.models.Produto;
 import br.com.uSolution.springbootapius.services.ProdutoService;
 
@@ -26,7 +25,9 @@ public class ProdutoResource {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> findId(@PathVariable Integer id) {
+
 		Produto obj = service.getId(id);
+
 		return ResponseEntity.ok(obj);
 
 	}

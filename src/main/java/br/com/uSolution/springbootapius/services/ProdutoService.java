@@ -35,5 +35,10 @@ public class ProdutoService {
 		Produto obj = getId(id);
 		repository.deleteById(obj.getId());
 	}
+	
+	public Produto save(Produto produto) {
+		Produto obj = repository.save(produto);
+		return obj;
+	}
 
 }

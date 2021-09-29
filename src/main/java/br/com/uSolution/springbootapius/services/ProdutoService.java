@@ -40,5 +40,13 @@ public class ProdutoService {
 		Produto obj = repository.save(produto);
 		return obj;
 	}
+	
+	public void update(Produto produto) {
+		Produto obj = new Produto(
+				produto.getId(),
+				produto.getNome(),
+				produto.getValor());
+		repository.save(obj);
+	}
 
 }

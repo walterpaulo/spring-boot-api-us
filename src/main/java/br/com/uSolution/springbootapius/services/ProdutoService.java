@@ -24,11 +24,16 @@ public class ProdutoService {
 		List<Produto> obj = repository.findAll();
 		return obj;
 	}
+
 	public Produto getId(Integer id) {
 		Optional<Produto> obj = repository.findById(id);
 		return obj.orElseThrow(
-				() -> new ObjectNotFoundException(
-						"Objeto não encontrado!: "+id+", "+Produto.class.getName()));
+				() -> new ObjectNotFoundException("Objeto não encontrado!: " + id + ", " + Produto.class.getName()));
+	}
+
+	public void deleteById(Integer id) {
+		Produto obj = getId(id);
+		repository.deleteById(obj.getId());
 	}
 
 }

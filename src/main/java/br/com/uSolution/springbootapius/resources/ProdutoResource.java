@@ -45,7 +45,6 @@ public class ProdutoResource {
 	
 	@PostMapping
 	public ResponseEntity<Produto> save(@RequestBody Produto produto){
-		produto.setId(null);
 		Produto obj = service.save(produto);
 		return ResponseEntity.ok().body(obj);
 	}

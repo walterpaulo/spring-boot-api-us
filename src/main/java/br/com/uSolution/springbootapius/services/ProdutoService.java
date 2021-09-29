@@ -35,18 +35,22 @@ public class ProdutoService {
 		Produto obj = getId(id);
 		repository.deleteById(obj.getId());
 	}
-	
+
 	public Produto save(Produto produto) {
 		Produto obj = repository.save(produto);
 		return obj;
 	}
-	
-	public void update(Produto produto) {
-		Produto obj = new Produto(
-				produto.getId(),
-				produto.getNome(),
-				produto.getValor());
-		repository.save(obj);
+
+	public Produto update(Produto produto) {
+		Produto achei = getId(produto.getId());
+		produto.setId(achei.getId());
+		Produto obj = repository.save(popularProduto(produto));
+		return obj;
+	}
+
+	private Produto popularProduto(Produto produto) {
+		Produto obj = new Produto(produto.getId(), produto.getNome(), produto.getValor());
+		return obj;
 	}
 
 }

@@ -50,9 +50,8 @@ public class ProdutoResource {
 	}
 	@PutMapping("/{id}")
 	public ResponseEntity<Produto> update(@PathVariable Integer id, @RequestBody Produto produto){
-		produto.setId(id);
-		Produto obj = service.update(produto);
-		return ResponseEntity.status(200).body(obj);
+		 service.update(produto);
+		 return ResponseEntity.ok().build();
 	}
 
 }
